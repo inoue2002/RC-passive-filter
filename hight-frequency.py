@@ -18,13 +18,13 @@ def calculate_theoretical_amplitude(R, C, f):
     """
     omega = 2 * math.pi * f
     # Convert to decibels
-    omega = 20 * math.log10(math.sqrt(1 + (omega * R * C) ** 2))
+    omega = 20 * math.log10(omega * R * C /math.sqrt(1 + (omega * R * C) ** 2))
     return omega
 
 if __name__ == "__main__":
     R = 10000  # Resistance in ohms
     C = 0.00000001 # Capacitance in farads
-    frequencies = [200, 1250, 1592, 5000, 20000]  # Frequencies in hertz
+    frequencies = [200, 500, 1250, 1592, 20000]   # Frequencies in hertz
     amplitudes = [calculate_theoretical_amplitude(R, C, f) for f in frequencies]
     
     # Log the data used for the plot

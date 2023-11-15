@@ -26,7 +26,7 @@ def calculate_phase_difference(R, C, f):
 if __name__ == "__main__":
     R = 10000  # Resistance in ohms
     C = 0.00000001 # Capacitance in farads
-    frequencies = [200, 1250, 1592, 5000, 20000]  # Frequencies in hertz
+    frequencies = [200, 500, 1250, 1592, 20000]  # Frequencies in hertz
     phase_differences = [calculate_phase_difference(R, C, f) for f in frequencies]
     
     # Log the data used for the plot
